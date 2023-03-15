@@ -11,14 +11,14 @@
 		D03E99FA29A6523300AB220A /* demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03E99F929A6523300AB220A /* demoApp.swift */; };
 		D03E99FC29A6523300AB220A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03E99FB29A6523300AB220A /* ContentView.swift */; };
 		D03E99FE29A6523400AB220A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03E99FD29A6523400AB220A /* Assets.xcassets */; };
-		D09EE4D629AEB6FA0065F4A7 /* QuickPoseCamera in Frameworks */ = {isa = PBXBuildFile; productRef = D09EE4D529AEB6FA0065F4A7 /* QuickPoseCamera */; };
-		D09EE4D829AEB6FA0065F4A7 /* QuickPoseCore in Frameworks */ = {isa = PBXBuildFile; productRef = D09EE4D729AEB6FA0065F4A7 /* QuickPoseCore */; };
-		D09EE4DA29AEB6FA0065F4A7 /* QuickPoseMP in Frameworks */ = {isa = PBXBuildFile; productRef = D09EE4D929AEB6FA0065F4A7 /* QuickPoseMP */; };
-		D09EE4DC29AEB6FA0065F4A7 /* QuickPoseSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D09EE4DB29AEB6FA0065F4A7 /* QuickPoseSwiftUI */; };
 		D0A74BBE29AD005300A90CA0 /* QuickPoseCamera in Frameworks */ = {isa = PBXBuildFile; productRef = D0A74BBD29AD005300A90CA0 /* QuickPoseCamera */; };
 		D0A74BC029AD005300A90CA0 /* QuickPoseCore in Frameworks */ = {isa = PBXBuildFile; productRef = D0A74BBF29AD005300A90CA0 /* QuickPoseCore */; };
 		D0A74BC229AD005300A90CA0 /* QuickPoseMP in Frameworks */ = {isa = PBXBuildFile; productRef = D0A74BC129AD005300A90CA0 /* QuickPoseMP */; };
 		D0A74BC429AD005300A90CA0 /* QuickPoseSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D0A74BC329AD005300A90CA0 /* QuickPoseSwiftUI */; };
+		D0FAC5AB29C224040082D34B /* QuickPoseCamera in Frameworks */ = {isa = PBXBuildFile; productRef = D0FAC5AA29C224040082D34B /* QuickPoseCamera */; };
+		D0FAC5AD29C224040082D34B /* QuickPoseCore in Frameworks */ = {isa = PBXBuildFile; productRef = D0FAC5AC29C224040082D34B /* QuickPoseCore */; };
+		D0FAC5AF29C224040082D34B /* QuickPoseMP in Frameworks */ = {isa = PBXBuildFile; productRef = D0FAC5AE29C224040082D34B /* QuickPoseMP */; };
+		D0FAC5B129C224040082D34B /* QuickPoseSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D0FAC5B029C224040082D34B /* QuickPoseSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +34,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09EE4DA29AEB6FA0065F4A7 /* QuickPoseMP in Frameworks */,
+				D0FAC5AF29C224040082D34B /* QuickPoseMP in Frameworks */,
 				D0A74BC029AD005300A90CA0 /* QuickPoseCore in Frameworks */,
 				D0A74BC229AD005300A90CA0 /* QuickPoseMP in Frameworks */,
-				D09EE4D829AEB6FA0065F4A7 /* QuickPoseCore in Frameworks */,
+				D0FAC5AD29C224040082D34B /* QuickPoseCore in Frameworks */,
 				D0A74BBE29AD005300A90CA0 /* QuickPoseCamera in Frameworks */,
-				D09EE4D629AEB6FA0065F4A7 /* QuickPoseCamera in Frameworks */,
+				D0FAC5AB29C224040082D34B /* QuickPoseCamera in Frameworks */,
 				D0A74BC429AD005300A90CA0 /* QuickPoseSwiftUI in Frameworks */,
-				D09EE4DC29AEB6FA0065F4A7 /* QuickPoseSwiftUI in Frameworks */,
+				D0FAC5B129C224040082D34B /* QuickPoseSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +104,10 @@
 				D0A74BBF29AD005300A90CA0 /* QuickPoseCore */,
 				D0A74BC129AD005300A90CA0 /* QuickPoseMP */,
 				D0A74BC329AD005300A90CA0 /* QuickPoseSwiftUI */,
-				D09EE4D529AEB6FA0065F4A7 /* QuickPoseCamera */,
-				D09EE4D729AEB6FA0065F4A7 /* QuickPoseCore */,
-				D09EE4D929AEB6FA0065F4A7 /* QuickPoseMP */,
-				D09EE4DB29AEB6FA0065F4A7 /* QuickPoseSwiftUI */,
+				D0FAC5AA29C224040082D34B /* QuickPoseCamera */,
+				D0FAC5AC29C224040082D34B /* QuickPoseCore */,
+				D0FAC5AE29C224040082D34B /* QuickPoseMP */,
+				D0FAC5B029C224040082D34B /* QuickPoseSwiftUI */,
 			);
 			productName = demo;
 			productReference = D03E99F629A6523300AB220A /* SquatCounter.app */;
@@ -138,7 +138,7 @@
 			);
 			mainGroup = D03E99ED29A6523300AB220A;
 			packageReferences = (
-				D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */,
+				D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */,
 			);
 			productRefGroup = D03E99F729A6523300AB220A /* Products */;
 			projectDirPath = "";
@@ -295,7 +295,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 22W63VGZT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -324,7 +323,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"demo/Preview Content\"";
 				DEVELOPMENT_TEAM = 22W63VGZT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -370,37 +368,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */ = {
+		D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/quickpose/quickpose-ios-sdk";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D09EE4D529AEB6FA0065F4A7 /* QuickPoseCamera */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
-			productName = QuickPoseCamera;
-		};
-		D09EE4D729AEB6FA0065F4A7 /* QuickPoseCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
-			productName = QuickPoseCore;
-		};
-		D09EE4D929AEB6FA0065F4A7 /* QuickPoseMP */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
-			productName = QuickPoseMP;
-		};
-		D09EE4DB29AEB6FA0065F4A7 /* QuickPoseSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D09EE4D429AEB6FA0065F4A7 /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
-			productName = QuickPoseSwiftUI;
-		};
 		D0A74BBD29AD005300A90CA0 /* QuickPoseCamera */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = QuickPoseCamera;
@@ -415,6 +393,26 @@
 		};
 		D0A74BC329AD005300A90CA0 /* QuickPoseSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = QuickPoseSwiftUI;
+		};
+		D0FAC5AA29C224040082D34B /* QuickPoseCamera */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
+			productName = QuickPoseCamera;
+		};
+		D0FAC5AC29C224040082D34B /* QuickPoseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
+			productName = QuickPoseCore;
+		};
+		D0FAC5AE29C224040082D34B /* QuickPoseMP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
+			productName = QuickPoseMP;
+		};
+		D0FAC5B029C224040082D34B /* QuickPoseSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0FAC5A929C224040082D34B /* XCRemoteSwiftPackageReference "quickpose-ios-sdk" */;
 			productName = QuickPoseSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
