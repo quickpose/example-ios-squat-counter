@@ -15,12 +15,14 @@ struct ContentView: View {
     @State var leftKneeSquatCounter = QuickPoseThresholdCounter()
     @State var overlayImage: UIImage?
     @State var count: Int?
-    @State var feedback: String?
+    @State var feedbackText: String?
     @State var scale = 1.0
     var body: some View {
         ZStack {
-            if let url = Bundle.main.url(forResource: "squats-pete", withExtension: "mov") {
+            if ProcessInfo.processInfo.isiOSAppOnMac, let url = Bundle.main.url(forResource: "squats-pete", withExtension: "mov") {
                 QuickPoseSimulatedCameraView(useFrontCamera: true, delegate: quickPose, video: url)
+            } else {
+                QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
             }
             QuickPoseOverlayView(overlayImage: $overlayImage)
         }.overlay(alignment: .top) {
@@ -30,31 +32,34 @@ struct ContentView: View {
                     .scaleEffect(scale)
             }
         }.overlay(alignment: .bottom) {
-            if let feedback = feedback {
-                Text(feedback).foregroundColor(Color.white).font(.system(size: 32))
+            if let feedback = feedbackText {
+                Text(feedback).foregroundColor(Color.white).font(.system(size: 26)).multilineTextAlignment(.center)
                     .padding(100)
             }
         }
         .onAppear {
             let smallStyle = QuickPose.Style(relativeFontSize: 0.3, relativeArcSize: 0.3, relativeLineWidth: 0.3, conditionalColors: [QuickPose.Style.ConditionalColor(min: nil, max: 140, color: UIColor.green)])
-            let squatCounterFeature = QuickPose.Feature.fitness(.squatCounter, style: smallStyle)
+            let squatCounterFeature = QuickPose.Feature.fitness(.squats, style: smallStyle)
             let leftKneeRom = QuickPose.Feature.rangeOfMotion(.knee(side: .left, clockwiseDirection: true), style: smallStyle)
             let rightKneeRom = QuickPose.Feature.rangeOfMotion(.knee(side: .right, clockwiseDirection: false), style: smallStyle)
             
             let redStyle = QuickPose.Style(relativeFontSize: 0.3, relativeArcSize: 0.3, relativeLineWidth: 0.3, color: UIColor.red)
             
             let features = [squatCounterFeature, leftKneeRom, rightKneeRom]
-            quickPose.start(features: features) { _, outputImage, result, _ in
+            quickPose.start(features: features) { status, outputImage, result, feedback, _ in
                 overlayImage = outputImage
-                
+                if let feedback = feedback[squatCounterFeature]  {
+                    feedbackText = feedback.displayString
+                } else {
+                    feedbackText = nil
+                }
                 if let fitnessResult = result[squatCounterFeature], let leftKneeRomResult = result[leftKneeRom] {
                     
                     leftKneeSquatCounter.count(probability: leftKneeRomResult.value < 140 ? fitnessResult.value : 0)
-                    
                     squatCounter.count(probability: fitnessResult.value) { status in
                         if case let .poseComplete(squatCount) = status {
                             if leftKneeSquatCounter.getCount() != squatCount {
-                                feedback = "left side is not low enough"
+                                feedbackText = "left side is not low enough"
                                 squatCounter.setCount(leftKneeSquatCounter.getCount())
                                 quickPose.update(features: [squatCounterFeature, leftKneeRom.restyled(redStyle), rightKneeRom])
                             } else {
@@ -69,7 +74,7 @@ struct ContentView: View {
                                 }
                             }
                         } else {
-                            feedback = ""
+                            feedbackText = nil
                             quickPose.update(features: features) // reset colors
                         }
                     }
