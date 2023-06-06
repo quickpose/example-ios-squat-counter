@@ -12,7 +12,7 @@ import AVFoundation
 struct demoApp: App {
     var body: some Scene {
         WindowGroup {
-            DemoAppView()
+            DemoAppView().edgesIgnoringSafeArea(.all)
         }
     }
 }
