@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/quickpose/quickpose-ios-sdk",
       "state" : {
-        "revision" : "019cc90355b1935aa851ce3c93e1eae61d89efca",
-        "version" : "1.1.1"
+        "revision" : "a49c1f9e6cbfb3fb6e5bcae07274dab0bd9bd89a",
+        "version" : "1.2.0"
       }
     }
   ],
